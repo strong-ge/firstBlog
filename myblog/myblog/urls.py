@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # url(r'^$', 'blog.views.default'),
     url(r'^$', 'blog.views.index'),
-    url(r'^default.html$', 'blog.views.default'),
+    # url(r'^default.html$', 'blog.views.default'),
     url(r'^list/$', 'blog.views.list'),
     url(r'^artical/(?P<aid>\d+)/$', 'blog.views.artical'),
     url(r'^about/$', 'blog.views.about'),

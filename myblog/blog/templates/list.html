@@ -7,7 +7,7 @@
                 <div class="main">
                     {%for blog in blog_list%}
                     <article class="artical_div">
-                        <div class="artical_title"><h3><a href="">{{blog.title}}</a></h3></div>
+                        <div class="artical_title"><h3><a href="/artical/{{blog.id}}/">{{blog.title}}</a></h3></div>
                         <div class="artical_info">
                             <span class="time">时间:{{ blog.update_time|date:"Y-m-d" }}</span>
                             <span class="lei">
