@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>插入文章</title>
+<style type="text/css">
+	.formdiv{
+		width: 500px;
+		text-align: center;
+	}
+	.title{
+		width: 500px;
+	}
+	.content{
+		width: 700px;
+		height: 400px;
+	}
+</style>
+{% load staticfiles %}
+<script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
+</head>
+<body>
+<div class="formdiv">
+	<form method="post" id="form1" action="/addblogok/">
+		<label>文章标题:</label>
+		<input type="text" name="title" class="title" /><br>
+		<label>文章标签:</label>
+		<div id="tagcheckbox">
+			{%for tag in tags%}
+			<label><input name="tag_name" type="checkbox" value="{{tag.id}}" id="tag_name"/>{{tag.tag_name}}</label> 
+			{%endfor%}
+		</div>
+		<input type="button" value="Newtag" id="newtag"/><br>
+		<div id="addtagdiv" style="display:none">
+			<input type="text" name="newtag_name"  id="newtag_name"/>
+			<input type="button" value="AddTag" id="AddTag" />
+		</div>
+		<label>文章内容:</label>
+		<textarea name="content" class="content">
+			
+		</textarea>
+		<input type="submit" value="Submit" id="sub1"/>
+		<input type="reset" value="Reset" />
+	</form>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#newtag").click(function(){
+		$("#addtagdiv").toggle();
+	});
+	$("#AddTag").click(function(){
+		var tag_name=$("#newtag_name").val()
+		if(tag_name){
+			// alert("okok");
+			$.ajax({
+				type: "GET",
+				url:"/addtag",
+				data: {tag_name:tag_name},
+				dataType: "json",
+				success: function(data){
+					window.location.reload();
+					// var tag_id=data['id'];
+					// var tag_name=data['tag_name'];
+					// var html='<label><input name="tag_name" type="checkbox" value="'+tag_id+'" />'+tag_name+'</label>' ;
+					// $('#tagcheckbox').append(html);
+				}
+			});
+		}
+		else{
+			alert("Please input a tag!");
+		}
+	});
+	$("#sub").click(function(){
+		$("#form1").action="addblogok";
+		$("#form1").submit();
+	});
+});
+</script>
+</body>
+</html>

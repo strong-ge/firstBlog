@@ -1,0 +1,67 @@
+{%  include 'top.html'  %}
+    <!-- body start -->
+    {% load staticfiles %}    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main">
+                    {%for blog in blog_list%}
+                    <article class="artical_div">
+                        <div class="artical_title"><h3><a href="">{{blog.title}}</a></h3></div>
+                        <div class="artical_info">
+                            <span class="time">时间:{{ blog.update_time|date:"Y-m-d" }}</span>
+                            <span class="lei">
+                            分类:
+                            {%for tag in blog.tags.all%}
+                                <span class="label label-default">{{tag.tag_name}}</span>
+                            {%endfor%}
+                            </span>
+                        </div>
+                        <div class="artical_content">
+                            {{blog.content|safe|truncatewords:"50" }}
+                        </div>
+                        <div class="more"><a href="">More</a></div>
+                    </article>
+                    {%endfor%}
+                </div>
+
+                <!-- page start -->
+                {% if blog_list.object_list and blog_list.paginator.num_pages > 1 %}
+                  <div>
+                  <ul class="pager">
+                  {% if blog_list.has_previous %}
+                    <li><a href="?page={{ blog_list.previous_page_number }}">上一页</a></li>
+                  {% endif %}
+
+                  {% if blog_list.has_next %}
+                    <li><a href="?page={{ blog_list.next_page_number }}">下一页</a></li>
+                  {% endif %}
+                  </ul>
+                  </div>
+                {% endif %}
+                <!-- page end -->
+                
+            </div>
+            <div class="col-md-3">
+                <div class="right">
+                    <div class="file">
+                        <h4>分类</h4>
+                        <ul>
+                            <li><p><a href="">python</a></p></li>
+                            <li><p><a href="">css/javascript</a></p></li>
+                        </ul>
+                    </div>
+                    <div class="classify">
+                        <h4>归档</h4>
+                        <ul>
+                            <li><p><a href="">2015-10</a></p></li>
+                            <li><p><a href="">2015-11</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- body end -->
+{%  include 'bottom.html'  %}

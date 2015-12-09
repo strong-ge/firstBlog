@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="strong-ge,强哥,strong-ge.com,博客">
+    <meta name="description" content="coding,coding,always coding">
+    {% load staticfiles %}
+    <link rel="stylesheet"  type="text/css"  href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet"  type="text/css"  href="{% static "css/blog.css" %}">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700' rel='stylesheet' type='text/css'>
+    <script src="{% static "js/jquery-1.9.1.min.js" %}"></script>
+    <script src="{% static "js/bootstrap.min.js"%}"></script>
+    <script src="{% static "js/blog.js"%}"></script>
+    <title>strong-ge的个人博客</title>
+</head>
+<body>
+    <!-- header start -->
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="site_name">
+                        <h1><a href="http://www.strong-ge.com">strong-ge</a></h1>
+                        <p>Life is short, use Python...</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="site_search">
+                        <form id="search" method="post" role="search">
+                            <label for="s" class="sr-only">搜索关键字</label>
+                            <input type="text" name="s" class="text" placeholder="输入关键字搜索" />
+                            <button type="submit" class="button">Go!</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs">
+                       <li><a href="http://www.strong-ge.com">Home</a></li>
+                       <li class="active"><a href="#">About</a></li>
+                    </ul>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+    <!-- body start -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main">
+                    <article class="artical_div">
+                        <p>sajklnaskld;d</p>
+                    <p>sajklnaskld;d</p>
+                     <p>sajklnaskld;d</p>
+                      <p>sajklnaskld;d</p>
+                       <p>sajklnaskld;d</p>
+                        <p>sajklnaskld;d</p>
+                         <p>sajklnaskld;d</p>
+                    </article>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="right">
+                    <div class="file">
+                        <h4>分类</h4>
+                        <ul>
+                            <li><p><a href="">python</a></p></li>
+                            <li><p><a href="">css/javascript</a></p></li>
+                        </ul>
+                    </div>
+                    <div class="classify">
+                        <h4>归档</h4>
+                        <ul>
+                            <li><p><a href="">2015-10</a></p></li>
+                            <li><p><a href="">2015-11</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- body end -->
+    <!-- foot start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="foot-info">
+                        <p style="text-align: center">已经到底了，如果感觉可以的话，请容许我无耻的说一句<a href="javascript:void(0)" id="txtShow">"包养我-点这里-"</a></p>
+                        <p style="text-align: center">Design By Strong-ge&nbsp;&nbsp;&nbsp;&nbsp;2015--2016</p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- foot end -->
+    <div id="div_show">
+           <div class="content1">
+              <div><img src="{% static "img/ae51sqxnz5xrqul1a7.png"%}"></div>
+              <div class="footer1">
+              <input id="btnCancel" type="button" value="关闭" />
+           </div>
+           </div>
+           <!-- <div class="footer1">
+              <input id="btnCancel" type="button" value="关闭" />
+           </div> -->
+        </div>
+    </div>
+</body>
+</html>
