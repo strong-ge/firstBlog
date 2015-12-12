@@ -51,13 +51,17 @@
             <div class="col-md-9">
                 <div class="main">
                     <article class="artical_div">
-                        <p>sajklnaskld;d</p>
-                    <p>sajklnaskld;d</p>
-                     <p>sajklnaskld;d</p>
-                      <p>sajklnaskld;d</p>
-                       <p>sajklnaskld;d</p>
-                        <p>sajklnaskld;d</p>
-                         <p>sajklnaskld;d</p>
+                        <div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><blockquote class="white-blockquote" data-anchor-id="f5id">
+  <p>这只是我的简介 <br>
+  这仅仅是我的简介 <br>
+  这还是我的简介</p>
+</blockquote><pre data-anchor-id="a7ll"><code>2015年毕业一个二流大学的三流本科，响应党的号召，不知怎的写起了代码。博客很丑，却作为一个成长的记录...
+</code></pre><hr><ol data-anchor-id="6dur">
+<li>使用python+Django框架，简单粗暴。</li>
+<li>nginx+uwisg作为代理服务器。</li>
+<li>markdown方式（虽然没搞好）</li>
+<li>Linode的vps（Tokyo），只要$10/month。</li>
+</ol></div>
                     </article>
                 </div>
             </div>
@@ -66,15 +70,18 @@
                     <div class="file">
                         <h4>分类</h4>
                         <ul>
-                            <li><p><a href="">python</a></p></li>
-                            <li><p><a href="">css/javascript</a></p></li>
+                            {% for x,y in tag_list %}
+                            <li><p><a href="/tag/{{x}}/">{{x}}({{y}})</a></p></li>
+                            {%endfor%}
                         </ul>
                     </div>
                     <div class="classify">
                         <h4>归档</h4>
                         <ul>
-                            <li><p><a href="">2015-10</a></p></li>
-                            <li><p><a href="">2015-11</a></p></li>
+                        {{a}}
+                            {% for x,y in date_list %}
+                            <li><p><a href="/article/{{x.year}}/{{x.month}}/">{{x.year}}-{{x.month}}({{y}})</a></p></li>
+                            {%endfor%}
                         </ul>
                     </div>
                 </div>

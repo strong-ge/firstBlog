@@ -5,7 +5,6 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="main">
-                {{date_list}}
                     {%for blog in blog_list%}
                     <article class="artical_div">
                         <div class="artical_title"><h3><a href="/artical/{{blog.id}}/">{{blog.title}}</a></h3></div>
@@ -21,7 +20,7 @@
                         <div class="artical_content">
                             {{blog.content|safe|truncatewords:"50" }}
                         </div>
-                        <div class="more"><a href="">More</a></div>
+                        <div class="more"><a href="/artical/{{blog.id}}/">More</a></div>
                     </article>
                     {%endfor%}
                 </div>
@@ -48,15 +47,16 @@
                     <div class="file">
                         <h4>分类</h4>
                         <ul>
-                            <li><p><a href="">python</a></p></li>
-                            <li><p><a href="">css/javascript</a></p></li>
+                            {% for x,y in tag_list %}
+                            <li><p><a href="/tag/{{x}}/">{{x}}({{y}})</a></p></li>
+                            {%endfor%}
                         </ul>
                     </div>
                     <div class="classify">
                         <h4>归档</h4>
                         <ul>
                             {% for x,y in date_list %}
-                            <li><p><a href="/artical/{{x.year}}/{{x.month}}/">{{x.year}}-{{x.month}}({{y}})</a></p></li>
+                            <li><p><a href="/article/{{x.year}}/{{x.month}}/">{{x.year}}-{{x.month}}({{y}})</a></p></li>
                             {%endfor%}
                             
                         </ul>

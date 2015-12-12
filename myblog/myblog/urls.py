@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^addtag/$', 'blog.views.addtag'),
     url(r'^addblogok/$', 'blog.views.addblogok'),
     url(r'^article/(?P<year>\d{4})/(?P<month>\d{1,2})/$','blog.views.archive_month'),
-    url(r'^articleTag/(?P<tag>\w+)/$', 'blog.views.tagDetail'),
+    url(r'^tag/(?P<tag>\w+)/$', 'blog.views.tagDetail'),
 ]
