@@ -1,0 +1,3 @@
+nginx重启： sudo /etc/init.d/nginx restart
+启动xml:zjq@zjq:~/dev/firstBlog/myblog$ uwsgi -x myblog.xml
+关闭当前占用的端口号（uwsgi）：killall -9 uwsgi
