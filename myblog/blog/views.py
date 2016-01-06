@@ -14,7 +14,7 @@ def test(request):
 	artical=Blog.objects.get(id=9)
 	return render_to_response('test.html',locals())
 def list(request):
-	blogs=Blog.objects.all()
+	blogs=Blog.objects.order_by('-update_time')
 	date_list=get_Blog_byMonth()
 	tag_list=get_Blog_byTag()    
 	paginator = Paginator(blogs, 8)
@@ -60,7 +60,7 @@ def addblogok(request):
 	return HttpResponseRedirect('/list/')
 #当前月份下的所有博客
 def archive_month(request,year,month):
-	blogs = Blog.objects.filter(update_time__year=year).filter(update_time__month=month)
+	blogs = Blog.objects.filter(update_time__year=year).filter(update_time__month=month).order_by('-update_time')
 	date_list=get_Blog_byMonth()
 	tag_list=get_Blog_byTag()
 	paginator = Paginator(blogs, 8)
@@ -77,7 +77,7 @@ def tagDetail(request,tag):
 	date_list=get_Blog_byMonth()
 	tag_list=get_Blog_byTag()
 	temp = Tag.objects.get(tag_name=tag)
-	blogs = temp.blog_set.all()
+	blogs = temp.blog_set.order_by('-update_time')
 	paginator = Paginator(blogs,8)
 	page=request.GET.get('page')
 	try:
