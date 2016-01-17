@@ -87,3 +87,6 @@ def tagDetail(request,tag):
 	except EmptyPage:
 		blog_list=paginator.paginator(paginator.num_pages)
 	return render_to_response('list.html',locals())
+
+def missyou(request):
+	return render_to_response('missyou.html',locals())

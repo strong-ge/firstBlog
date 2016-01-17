@@ -1,0 +1,87 @@
+{%  include 'top.html'  %}
+    <!-- body start -->
+    {% load staticfiles %}    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="main">
+                    <article class="artical_div">
+                        <div class="artical_title"><h1>MissYou</h1></div>
+                        <div class="artical_info">
+                            <span class="time">时间:{{ artical.update_time|date:"Y-m-d" }}</span>
+                            <span class="lei">分类:
+                                {%for tag in artical.tags.all%}
+                                <span class="label label-default">{{tag.tag_name}}</span>
+                            {%endfor%}
+                            </span>
+                        </div>
+                        <div class="artical_content">
+                            <!-- <p>{{artical.content|safe}}</p> -->
+
+
+                            <div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><div class="md-section-divider"></div><h1 data-anchor-id="j2hn" id="missyou"></h1><hr><p data-anchor-id="sf1c"><strong>王芳同学好：</strong></p><p data-anchor-id="7a44">红包没钱，不好意思。</p><p data-anchor-id="a030">好久没动笔，手都是抖的。</p><p data-anchor-id="x1lp">字写得不好，见谅。</p><p data-anchor-id="6c0b">先说旁边的几样东西。书是我在大二无聊的时候看的，见它的封面扯得这</p><p data-anchor-id="vu2n">么好就买了一本。这也许是我除了语文书之外读得最认真的文学类书了，不</p><p data-anchor-id="qi91">知道你有没有看过。书不厚，可我断断续续好长时间才看完。故事平淡而真实</p><p data-anchor-id="tczl">，希望你喜欢。</p><p data-anchor-id="gred">你说你做讲师要讲课，可能喉咙有不舒服。一星期前买了润喉糖打算一起送你</p><p data-anchor-id="ubts">。可这该死的糖果现在还在飞的路上。好吧，我承认，他确实打乱了我的计划</p><p data-anchor-id="3bkq">。所以，你看到旁边那颗长得像糖的糖了吗，如果你够勇敢的话，我想味道还</p><p data-anchor-id="7532">不错。</p><p data-anchor-id="z13t">其实第一次见你就对你感觉很好，美丽，大方。对你的喜欢套用上面这本书里</p><p data-anchor-id="4rd9">的两段话，也许不是很贴切：</p><p data-anchor-id="t50n">One:</p><blockquote data-anchor-id="nqui" class="white-blockquote">
+  <p>我只是你生活里的一个影子，你却在我的生命力占有重要地位。如果我只是个</p>
+  
+  <p>单纯的过客，为何要让我闯入你的生活？我千百次想要离开过你，但仅凭一己</p>
+  
+  <p>之力我做不到。</p>
+</blockquote><p data-anchor-id="ac12">Another:</p><blockquote data-anchor-id="u93g" class="white-blockquote">
+  <p>其实最棒的回忆就在当下，在眼前，而且这会是人生最美好的时光！</p>
+</blockquote><p data-anchor-id="dxwi"><a href="http://www.strong-ge.com" target="_blank">返回博客</a> </p></div>
+
+
+
+                        </div>
+                        <!-- <div class="more"><a href="">More</a></div> -->
+                    </article>
+                </div>
+
+
+                <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="{{artical.id}}" data-title="{{artical.title}}" data-url="www.strong-ge.com/artical/{{artical.id}}/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"strong-ge"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+            </div>
+            <div class="col-md-3">
+                <div class="right">
+                    <div class="file">
+                        <h4>分类</h4>
+                        <ul>
+                            <li><p><a href="">python</a></p></li>
+                            <li><p><a href="">css/javascript</a></p></li>
+                        </ul>
+                    </div>
+                    <div class="classify">
+                        <h4>归档</h4>
+                        <ul>
+                            <li><p><a href="">2015-10</a></p></li>
+                            <li><p><a href="">2015-11</a></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- body end -->
+
+
+
+
+
+{%  include 'bottom.html'  %}
