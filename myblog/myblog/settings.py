@@ -1,3 +1,4 @@
+# coding:utf-8
 """
 Django settings for myblog project.
 
@@ -38,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'followdream',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -91,7 +93,7 @@ LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
-
+    
 USE_L10N = True
 
 USE_TZ = True
@@ -101,3 +103,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT='/home/zjq/upload/'
+MEDIA_URL='/upload/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'simba_cc@163.com'
+EMAIL_HOST_PASSWORD = 'zjq008040141'
+DEFAULT_FROM_EMAIL = '大阿拉伯人<simba_cc@163.com>'
