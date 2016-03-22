@@ -104,6 +104,9 @@ def saveDream(request):
         raise e
     return HttpResponseRedirect('fly_success')
 
+def fly_success(request):
+    return render_to_response('fly_success.html')
+
 def support_it(request):
     dream_id=request.POST.get('dream_id')
     ip=request.POST.get('ip')
