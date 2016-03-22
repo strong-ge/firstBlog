@@ -18,10 +18,11 @@
                             </span>
                         </div>
                         <div class="artical_content">
-                            {{blog.content|safe|truncatewords:"30" }}
+                            {{blog.content|safe|truncatewords_html:"30" }}
                         </div>
                         <div class="more"><a href="/artical/{{blog.id}}/">More</a></div>
                     </article>
+                    <!-- <div class="more"><a href="/artical/{{blog.id}}/">More</a></div> -->
                     {%endfor%}
                 </div>
 
