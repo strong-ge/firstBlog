@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^$', 'blog.views.default'),
     url(r'^$', 'blog.views.index'),
-    # url(r'^default.html$', 'blog.views.default'),
     url(r'^list/$', 'blog.views.list'),
     url(r'^artical/(?P<aid>\d+)/$', 'blog.views.artical'),
     url(r'^about/$', 'blog.views.about'),
@@ -30,4 +30,14 @@ urlpatterns = [
     url(r'^article/(?P<year>\d{4})/(?P<month>\d{1,2})/$','blog.views.archive_month'),
     url(r'^tag/(?P<tag>\w+)/$', 'blog.views.tagDetail'),
     url(r'^missyou/$', 'blog.views.missyou'),
+
+    url(r'^followdream/$', 'followdream.views.followdream'),
+    url(r'^createdream/$', 'followdream.views.createdream'),
+    url(r'^test$', 'followdream.views.test'),
+    url(r'^getVCode$', 'followdream.views.getVCode'),
+    url(r'^verificeVCode$', 'followdream.views.verificeVCode'),
+    url(r'^saveDream$', 'followdream.views.saveDream'),
+    url(r'^fly_success$', 'followdream.views.fly_success'),
+    url(r'^support_it$', 'followdream.views.support_it'),
+    url(r'^upload/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}),
 ]
