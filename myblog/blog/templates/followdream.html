@@ -69,7 +69,7 @@
             var dream_id=$(this).next().attr("did");
             var $old=$(this).next();
             var old_love_num=$(this).next().html()//get old_love_num
-            var ip={{ip}};
+            var ip="{{ip}}";
              $.ajax({
                 type: "POST",
                 url: "support_it",
