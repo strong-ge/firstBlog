@@ -39,7 +39,7 @@ urlpatterns = [
     url(r'^saveDream$', 'blog.followdream_views.saveDream'),
     url(r'^followdream/$', 'blog.followdream_views.followdream'),
     url(r'^support_it$', 'blog.followdream_views.support_it'),
-    url(r'^moredream$', 'blog.followdream_views.moredream'),
+#    url(r'^moredream$', 'blog.followdream_views.moredream'),
     url(r'^fly_success$', 'blog.followdream_views.fly_success'),
     url(r'^upload/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT,}),
     #followdream end
