@@ -78,6 +78,7 @@ body{
 .pic img{
     width: 265px;
     height: auto;
+    /*max-height: 325px;*/
 }
 .content{
     width: 265px;
